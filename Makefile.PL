@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "PetaMem release. Converting numeric values into their Afrikaans equivalents.",
+  "ABSTRACT" => "Converts numeric values into their Afrikaans equivalents.",
   "AUTHOR" => "Alistair Francis <cpan\@alizta.com>",
   "BUILD_REQUIRES" => {
     "Test::More" => 0,
@@ -27,7 +27,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.044",
+  "VERSION" => "0.0577",
   "test" => {
     "TESTS" => "t/*.t"
   }

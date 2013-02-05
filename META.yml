@@ -1,5 +1,5 @@
 ---
-abstract: 'PetaMem release. Converting numeric values into their Afrikaans equivalents.'
+abstract: 'Converts numeric values into their Afrikaans equivalents.'
 author:
   - 'Alistair Francis <cpan@alizta.com>'
 build_requires:
@@ -18,4 +18,4 @@ requires:
   Perl6::Export::Attrs: 0
   strict: 0
   warnings: 0
-version: 0.044
+version: 0.0577

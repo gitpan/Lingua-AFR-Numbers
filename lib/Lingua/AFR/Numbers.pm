@@ -1,7 +1,7 @@
 # For Emacs: -*- mode:cperl; mode:folding -*-
 
 package Lingua::AFR::Numbers;
-# ABSTRACT: PetaMem release. Converting numeric values into their Afrikaans equivalents.
+# ABSTRACT: Converts numeric values into their Afrikaans equivalents.
 
 # {{{ use block
 
@@ -13,8 +13,7 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variables declaration
 
-my($ver)      = ('$Rev: 440 $' =~ m{(\d+)}xms);
-our $VERSION = $ver / 10_000;
+our $VERSION = 0.0577;
 
 my $numbers = {
     0   =>      'nul',
@@ -244,11 +243,13 @@ Lingua::AFR::Numbers
 
 =head1 VERSION
 
-version 0.044
+version 0.0577
 
 =head1 DESCRIPTION
 
-PetaMem release. Converting numeric values into their Afrikaans equivalents.
+Converts numeric values into their Afrikaans equivalents.
+
+This is PetaMem release.
 
 =head1 SYNOPSIS
 
