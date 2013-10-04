@@ -11,6 +11,7 @@ use warnings;
 use utf8;
 
 use Test::More;
+use Test::Exception;
 
 # }}}
 
@@ -41,14 +42,10 @@ $exp = 'nege honderd nege en negentig';
 is($got, $exp, '999 in Afrikans');
 $tests++;
 
-$got = parse($numbers, 100000000000000);
-$exp = q{};
-is($got, $exp, 'out of bounds');
+dies_ok(sub { parse($numbers, 100000000000000); }, 'out of bounds');
 $tests++;
 
-$got = parse($numbers, undef);
-$exp = q{};
-is($got, $exp, 'undef args');
+dies_ok(sub { parse($numbers, undef); }, 'undef args');
 $tests++;
 
 # }}}

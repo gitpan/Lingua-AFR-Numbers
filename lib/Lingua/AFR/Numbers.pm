@@ -10,12 +10,13 @@ use 5.10.1;
 use strict;
 use warnings;
 
+use Carp;
 use Perl6::Export::Attrs;
 
 # }}}
 # {{{ variables declaration
 
-our $VERSION = 0.0682;
+our $VERSION = 0.1101;
 
 my $numbers = {
     0   =>      'nul',
@@ -70,11 +71,17 @@ sub new {
 # {{{ parse
 
 sub parse :Export {
-    my $self = shift   // return;
-    my $number = shift // return '';
+    my $self   = shift // return;
+    my $number = shift;
 
     my $digits;
     my $ret = '';
+
+    croak 'You should specify a number from interval [0, 99_999_999_999]'
+        if    !defined $number
+           || $number !~ m{\A\d+\z}xms
+           || $number < 0
+           || $number > 99_999_999_999;
 
     if( defined($numbers->{$number}) ) {
         $ret = $numbers->{$number};
@@ -178,7 +185,7 @@ sub _sortReturn {
     };
 
     if( ($digits->[0] == 0) && ($digits->[1] == 0) ) {
-        # do nothing
+        $ret .= ' ' . $ret_array->[0];
     }
     elsif( ($digits->[0] == 0) || ($digits->[1] == 0) || ($digits->[1] == 1) ) {
         if( $large_nums ) {
@@ -187,7 +194,7 @@ sub _sortReturn {
         $ret .= $ret_array->[0];
     }
     else {
-        $ret .= ' '. $ret_array->[0];
+        $ret .= ' ' . $ret_array->[0];
     };
 
     $ret =~ s/(^ |\s{2,}| $)/ /g;
@@ -245,7 +252,7 @@ Lingua::AFR::Numbers
 
 =head1 VERSION
 
-version 0.0682
+version 0.1101
 
 =head1 DESCRIPTION
 

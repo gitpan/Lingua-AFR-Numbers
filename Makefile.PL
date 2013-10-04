@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Converts numeric values into their Afrikaans equivalents.",
   "AUTHOR" => "Alistair Francis <cpan\@alizta.com>",
   "BUILD_REQUIRES" => {
+    "Test::Exception" => 0,
     "Test::More" => 0,
     "utf8" => 0
   },
@@ -23,11 +24,12 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Lingua::AFR::Numbers",
   "PREREQ_PM" => {
+    "Carp" => 0,
     "Perl6::Export::Attrs" => 0,
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.0682",
+  "VERSION" => "0.1101",
   "test" => {
     "TESTS" => "t/*.t"
   }
