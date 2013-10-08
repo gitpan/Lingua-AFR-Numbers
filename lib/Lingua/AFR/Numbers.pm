@@ -16,7 +16,7 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variables declaration
 
-our $VERSION = 0.1101;
+our $VERSION = 0.1106;
 
 my $numbers = {
     0   =>      'nul',
@@ -252,7 +252,7 @@ Lingua::AFR::Numbers
 
 =head1 VERSION
 
-version 0.1101
+version 0.1106
 
 =head1 DESCRIPTION
 
@@ -282,6 +282,8 @@ constructor
 =item parse
 
 Convert number to string.
+Only numbers from interval [0, 99 999 999 999]
+will be converted.
 
 =back
 
